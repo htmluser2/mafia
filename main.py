@@ -15,7 +15,7 @@ SUPABASE_KEY = os.getenv("SUPA_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = "testysecret"
 
 
 @app.route('/')
@@ -562,4 +562,4 @@ def logout():
     return redirect(url_for("home"))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
